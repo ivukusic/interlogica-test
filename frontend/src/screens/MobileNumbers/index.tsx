@@ -71,7 +71,7 @@ export const SAMobileNumbers = (): JSX.Element => {
 
   const renderForm = (): JSX.Element => (
     <form action="POST">
-      <input data-testid="file" type="file" name="file" onChange={handleForm} value={fileValue} />
+      <input data-testid="file" accept=".csv" type="file" name="file" onChange={handleForm} value={fileValue} />
       <button data-testid="submit-button" type="submit" onClick={handleSubmit}>
         Upload File
       </button>
@@ -80,12 +80,11 @@ export const SAMobileNumbers = (): JSX.Element => {
 
   return (
     <div className="container">
-      {numbers && !Object.keys(numbers).length && renderForm()}
       {renderForm()}
       <div className="error-message" data-testid="error-message">
         {message}
       </div>
-      {numbers && !!Object.keys(numbers).length && (
+      {numbers && numbers.data && !!Object.keys(numbers.data).length && (
         <Table
           data={numbers.data}
           updateNumber={updateNumber}
