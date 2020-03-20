@@ -1,0 +1,12 @@
+.number__suggestion {
+  color: white;
+  padding: 1px;
+  letter-spacing: 0.05em;
+  line-height: 1em;
+  text-align: center;
+}
+.number__suggestion--red {
+  background: #e8e8ae;
+  opacity: 0.8;
+  color: black;
+}
