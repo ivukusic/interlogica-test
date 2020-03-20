@@ -3,11 +3,15 @@ export interface SuggestionInterface {
   number: number;
 }
 
+export enum ChangedEnum {
+  'first-two',
+  'first-two-fourth',
+}
 export interface MobileInterface {
   id: string;
   number: number;
   originalNumber: number;
-  changed?: string;
+  changed?: ChangedEnum;
   isValid: boolean;
   suggestions?: SuggestionInterface[];
   deleted: boolean;
